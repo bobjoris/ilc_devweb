@@ -6,6 +6,7 @@
         {% block stylesheets %}
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
             <link href="{{ asset('bundles/ilcshop/css/style.css') }}" rel="stylesheet" />
+            <link href="{{ asset('bundles/ilcshop/css/base.css') }}" rel="stylesheet" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -44,7 +45,7 @@
 
             <div class="search_box">
                 <input type="text" placeholder="Search entire store here" />
-                <button>Search</button>
+                <button class="btn">Search</button>
             </div>
         </nav>
 
@@ -57,11 +58,7 @@
         </div>
 
         <nav id="breadcrumb">
-            <ul>
-                <li>Home</li>
-                <li>His</li>
-                <li>Blabla</li>
-            </ul>
+          {% block breadcrumb %}{% endblock %}
         </nav>
 
         {% block body %}{% endblock %}
@@ -128,7 +125,7 @@
             <img src="{{ asset('bundles/ilcshop/images/secured.png') }}" alt="Logo Secured" />
             </div>
         </div>
-        </footer>        
+        </footer>
 
         {% block javascripts %}{% endblock %}
     </body>

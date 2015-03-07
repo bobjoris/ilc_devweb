@@ -1,5 +1,13 @@
 {% extends '::base.html.twig' %}
 
+{% block breadcrumb %}
+	<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">His</a></li>
+			<li>Blabla</li>
+	</ul>
+{% endblock %}
+
 {% block body %}
 	<div class="left_panel">
 		<div class="left_panel_title">
@@ -17,7 +25,7 @@
 	</div>
 
 	<div class="content">
-		
+
 		<div class="filter">
 			<div class="filter_top">
 				<a class="hide_option" href="#">Hide Option <i class="fa fa-long-arrow-down"></i></a>
@@ -46,7 +54,7 @@
 				</div>
 				<a href="#" class="item_name">Item name</a>
 				<span class="item_price">$320.00</span>
-				<button  class="add_cart">Add to cart</button>
+				<button  class="btn add_cart">Add to cart</button>
 				<a href=""><img src="{{ asset('bundles/ilcshop/images/knowMore.png') }}" alt="Logo en savoir plus" class="min_icone" /></a>
 				<a href=""><img src="{{ asset('bundles/ilcshop/images/download.png') }}" alt="Logo téléchargement" class="min_icone" /></a>
 			</div>
