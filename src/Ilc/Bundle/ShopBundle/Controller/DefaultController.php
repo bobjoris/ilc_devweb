@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="index")
      * @Template()
      */
     public function indexAction()
@@ -18,7 +18,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("cart/")
+     * @Route("cart/", name="cart")
      * @Template()
      */
     public function cartAction()
@@ -33,5 +33,14 @@ class DefaultController extends Controller
     public function checkoutAction()
     {
     	return array();
+    }
+
+    /**
+     * @Route("header_info/", name="header_info")
+     * @Template()
+     */
+    public function headerInfoAction()
+    {
+      return array();
     }
 }

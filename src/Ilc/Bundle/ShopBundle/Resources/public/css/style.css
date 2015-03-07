@@ -122,30 +122,30 @@ a:hover {
 	font-weight: 400;
 }
 
-.left_panel_title_content {
+.left_panel_content {
 	padding-left: 15px;
 	margin-top: 20px;
 	font-size: 0.8em;
 }
 
-.left_panel_title_content h4 {
+.left_panel_content h4 {
 	text-transform: uppercase;
 	margin-bottom: 10px;
 }
 
-.left_panel_title_content ul {
+.left_panel_content ul {
 	color: #868686;
 }
 
-.left_panel_title_content li{
+.left_panel_content li{
 	margin-bottom: 10px;
 }
 
-.left_panel_title_content li.active {
+.left_panel_content li.active {
 	color: #000;
 }
 
-.left_panel_title_content li.active:before {
+.left_panel_content li.active:before {
 	content: " > ";
 }
 
