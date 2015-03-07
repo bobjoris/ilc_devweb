@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            <link href="{{ asset('bundles/ilcshop/css/style.css') }}" rel="stylesheet" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="container">
+
+        <header>
+            <h1>Chaussure</h1>
+            <nav class="quick_links">
+                <ul>
+                    <li>Wish list (0)</li>
+                    <li>My Account</li>
+                    <li>Checkout</li>
+                    <li>Select a language <i class="fa fa-angle-down"></i></li>
+                </ul>
+            </nav>
+
+            <ul class="info">
+                <li class="phone"><a href="#">(08)4123541214</a><br/><span>Support online</span></li>
+                <li class="account"><a href="#">My account</a><br/><span>Welcome customer (log in)</span></li>
+                <li class="items"><a href="#"><span class="number">0</span><span class="text">item(s)</span></a></li>
+            </ul>
+        </header>
+
+
+        <nav class="categories">
+            <ul>
+                <li><a href="#">Hers</a></li>
+                <li><a href="#">His</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Trainers</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Brands</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="#">Dealers</a></li>
+            </ul>
+
+            <div class="search_box">
+                <input type="text" placeholder="Search entire store here" />
+                <button>Search</button>
+            </div>
+        </nav>
+
+        <div class="informations">
+            <ul>
+                <li><img src="{{ asset('bundles/ilcshop/images/sale.png') }}">10% Off for all students</li>
+                <li><img src="{{ asset('bundles/ilcshop/images/delivery.png') }}">International delivery <span>from $5</span></li>
+                <li><img src="{{ asset('bundles/ilcshop/images/return.png') }}">Free returns <span>with collect+</span></li>
+            </ul>
+        </div>
+
+        <nav id="breadcrumb">
+            <ul>
+                <li>Home</li>
+                <li>His</li>
+                <li>Blabla</li>
+            </ul>
+        </nav>
+
+        {% block body %}{% endblock %}
+
+        <div class="clear"></div>
+        <footer>
+            <div class="footer_content">
+            <div class="footer_information">
+                <h4 class="footer_title">About us</h4>
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis eleifend commodo. Morbi maximus justo vel justo semper, et volutpat augue luctus. Nam commodo auctor.</p>
+            </div>
+            <div class="footer_information">
+                <h4 class="footer_title">Guarantee</h4>
+                <ul>
+                    <li>Security</li>
+                    <li>Quality</li>
+                    <li>Support</li>
+                    <li>Value for money</li>
+                </ul>
+            </div>
+            <div class="footer_information">
+                <h4 class="footer_title">Our support</h4>
+                <ul>
+                    <li><strong>Need help ?</strong></li>
+                    <li>FAQ</li>
+                    <li>SMS Unsubscription</li>
+                    <li>How To Use Promo Code?</li>
+                </ul>
+            </div>
+            <div class="footer_information">
+                <h4 class="footer_title">Shopping with us</h4>
+                <ul>
+                    <li>Security</li>
+                    <li>Quality</li>
+                    <li>Support</li>
+                    <li>Value for money</li>
+                </ul>
+            </div>
+            <div class="footer_information">
+                <h4 class="footer_title">Delivery and return</h4>
+                <ul>
+                    <li>Meet the team</li>
+                    <li>Press</li>
+                    <li>Careers</li>
+                    <li>Life @OpenDeal$</li>
+                </ul>
+            </div>
+            <div class="footer_information">
+                <h4 class="footer_title">Contact us</h4>
+                <ul>
+                    <li>Meet the team</li>
+                    <li>Press</li>
+                    <li>Careers</li>
+                    <li>Life @OpenDeal$</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_payment">
+            <div class="footer_payment_content">
+            <img src="{{ asset('bundles/ilcshop/images/mastercard.png') }}" alt="Logo Master card" />
+            <img src="{{ asset('bundles/ilcshop/images/american_express.png') }}" alt="Logo American Express" />
+            <img src="{{ asset('bundles/ilcshop/images/paypal.png') }}" alt="Logo Paypal" />
+            <img src="{{ asset('bundles/ilcshop/images/secured.png') }}" alt="Logo Secured" />
+            </div>
+        </div>
+        </footer>        
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

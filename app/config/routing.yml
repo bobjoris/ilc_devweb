@@ -1,0 +1,8 @@
+ilc_shop:
+    resource: "@IlcShopBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
