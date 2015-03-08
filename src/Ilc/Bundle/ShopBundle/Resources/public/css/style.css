@@ -58,6 +58,12 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+p {
+	margin-bottom: 20px;
+	font-size: 0.9em;
+	color: #4c4c4c;
+}
+
 a {
 	color: #000;
 }
@@ -65,6 +71,27 @@ a {
 a:hover {
 	color: #6699ff;
 }
+
+
+h3 {
+	color: #777;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.border_number {
+	padding: 2px 7px;
+	border: 1px solid #777;
+}
+
+.active, .active>.border_number {
+	color: #e92e2e;
+	border-color: #e92e2e;
+}
+
 
 .container {
 	width: 1180px;
@@ -84,12 +111,28 @@ a:hover {
 	color: white;
 	cursor: pointer;
 	padding: 11px 15px;
+	font-size: 0.69em;
 }
 
 .btn:hover {
 	background-color: #ff4f4f;
 }
 
+.black {
+	background-color: #000;
+}
+
+.black:hover {
+	background-color: #444;
+}
+
+.red {
+	color: #e92e2e;
+}
+
+.bold {
+	font-weight: bold;
+}
 
 .left_panel {
 	width: 280px;
@@ -111,7 +154,6 @@ a:hover {
 .left_panel_title {
 	background-color: #2b2b2b;
 	height: 42px;
-	color: white;
 	padding-top: 13px;
 	padding-left: 15px;
 }
@@ -120,6 +162,8 @@ a:hover {
 	text-transform: uppercase;
 	font-size: 1.1em;
 	font-weight: 400;
+	color: #FFF;
+	margin: 0;
 }
 
 .left_panel_content {
@@ -135,6 +179,7 @@ a:hover {
 
 .left_panel_content ul {
 	color: #868686;
+	margin-bottom: 33px;
 }
 
 .left_panel_content li{
@@ -230,6 +275,13 @@ a:hover {
 	color: #FFF;
 	padding: 15px 30px;
 	text-transform: uppercase;
+	opacity: .0;
+	transition: all 0.5s;
+}
+
+.quick_shop:hover {
+	opacity: 1;
+
 }
 
 .item_image {
@@ -274,4 +326,71 @@ a:hover {
 
 .add_cart {
 	float: left;
+}
+
+
+.checkout_content {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.checkout_content div:first-child {
+	margin-right: 160px;
+}
+
+.form_connection label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.form_connection input {
+	width: 370px;
+	height: 30px;
+	border: 1px solid #c9c9c9;
+	padding-left: 7px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+
+th {
+	background: #ee5255;
+	color: #FFF;
+	padding: 10px;
+	font-weight: 400;
+	text-align: left;
+	border: none;
+	border-bottom: d45050;
+}
+
+td {
+	padding: 10px;
+	background: #FFF;
+	vertical-align: middle;
+	border-bottom: 1px solid #dadada;
+}
+
+td:first-child {
+	border-left:  1px solid #dadada;
+}
+
+td:last-child {
+	border-right: 1px solid #dadada;
+}
+
+td img {
+	vertical-align: middle;
+	border-radius: 5px;
+}
+
+
+.flex_space {
+	display: flex;
+	justify-content: space-between;
 }

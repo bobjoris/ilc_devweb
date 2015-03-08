@@ -27,7 +27,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("checkout/")
+     * @Route("checkout/", name="checkout")
      * @Template()
      */
     public function checkoutAction()

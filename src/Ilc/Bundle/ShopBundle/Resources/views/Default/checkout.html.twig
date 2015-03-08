@@ -2,25 +2,60 @@
 
 {% block breadcrumb %}
 	<ul>
-			<li><a href="#">Home</a></li>
-			<li>Checkout</li>
-	</ul>
+       <li><a href="#">Home</a></li>
+       <li>Checkout</li>
+   </ul>
 {% endblock %}
 
 {% block body %}
 
-<div class="left_panel">
-  <div class="left_panel_title">
-    <h3>Checkout Progress</h3>
+    <div class="left_panel">
+      <div class="left_panel_title">
+        <h3>Checkout Progress</h3>
+    </div>
+    <div class="left_panel_content">
+        <ul>
+          <li>Billing Address</li>
+          <li>Shipping Address</li>
+          <li>Shipping Method</li>
+          <li>Payment Method</li>
+      </ul>
   </div>
-  <div class="left_panel_content">
-    <ul>
-      <li class="active">Item1</li>
-      <li>Item2</li>
-      <li>Item3</li>
-      <li>Item4</li>
-    </ul>
-  </div>
+</div>
+
+<div class="content">
+    <h3 class="active"><span class="border_number">1</span> Checkout method</h3>
+    <div class="checkout_content">
+        <div>
+           <p><strong>Checkout as a guest or register</strong></p>
+           <p>Register with us for futher convienience</p>
+
+           <p>Register and save time !</p>
+           <button class="btn">Continue</button> 
+       </div>
+       <div>
+           <p><strong>Login</strong></p>
+           <p>Already registered? Please login below:</p>
+           <form class="form_connection">
+                <p>
+                    <label for="input_EmailAdress">Email adress:</label>
+                    <input type="text" id="input_EmailAdress" />
+                </p>
+                <p>
+                    <label for="input_Password">Password:</label>
+                    <input type="password" id="input_Password" />
+                </p>
+
+            <button type="submit" class="btn">Login</button> 
+        </form>
+    </div>
+</div>
+
+<h3><span class="border_number">2</span> Billing information</h3>
+<h3><span class="border_number">3</span> Shipping information</h3>
+<h3><span class="border_number">4</span> Shipping method</h3>
+<h3><span class="border_number">5</span> Payment information</h3>
+<h3><span class="border_number">6</span> Order review</h3>
 </div>
 
 

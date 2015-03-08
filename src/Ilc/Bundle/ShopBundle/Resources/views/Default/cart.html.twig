@@ -8,5 +8,30 @@
 {% endblock %}
 
 {% block body %}
+<table>
+	<thead>
+		<tr>
+			<th>Product Name</th>
+			<th></th>
+			<th>Unit Price</th>
+			<th>Qty</th>
+			<th>Subtotal</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><img src="http://placekitten.com/68/88" alt="item picture" /> Nam at lectus eget mi hendrerit tincidunt</td>
+			<td>Edit</td>
+			<td><span class="red bold">$90.00</span></td>
+			<td><input type="text" value="1" size="3" /></td>
+			<td><span class="red bold">$90.00</span></td>
+			<td><span class="red bold">x</span></td>
+		</tr>
+	</tbody>
+</table>
 
+<div class="flex_space">
+	<a class="btn black" href="{{ path('checkout') }}">Continue shopping</a><button class="btn">Update shopping cart</button>
+</div>
 {% endblock %}
