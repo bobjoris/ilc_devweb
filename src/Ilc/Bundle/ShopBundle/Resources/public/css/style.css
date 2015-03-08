@@ -389,6 +389,11 @@ td img {
 	border-radius: 5px;
 }
 
+.notification {
+	background-color: #89c3ff;
+	color: #FFF;
+
+}
 
 .flex_space {
 	display: flex;
