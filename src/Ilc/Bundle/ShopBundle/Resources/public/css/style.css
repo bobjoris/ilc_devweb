@@ -186,6 +186,10 @@ h3 {
 	margin-bottom: 10px;
 }
 
+.left_panel_content li a {
+	color: #868686;
+}
+
 .left_panel_content li.active {
 	color: #000;
 }

@@ -16,10 +16,9 @@
 		<div class="left_panel_content">
 			<h4>Category</h4>
 			<ul>
-				<li class="active">Item1</li>
-				<li>Item2</li>
-				<li>Item3</li>
-				<li>Item4</li>
+				{% for category in categories %}
+					<li><a href="">{{ category.name }}</a></li>
+				{% endfor %}
 			</ul>
 		</div>
 	</div>
@@ -47,19 +46,24 @@
 		</div>
 
 		<div class="items">
+			{% for product in products %}
 			<div class="item">
 				<a href="#" class="quick_shop">Quick shop</a>
 				<div class="item_image">
-					<img src="http://placekitten.com/g/281/289" alt="item picture" />
+					<img src="{{ product.image }}" alt="item picture" />
 				</div>
-				<a href="#" class="item_name">Item name</a>
-				<span class="item_price">$320.00</span>
-				<button  class="btn add_cart">Add to cart</button>
+				<a href="#" class="item_name">{{ product.name }}</a>
+				<span class="item_price">${{ product.price }}</span>
+				<button  class="btn add_cart" data-id="{{ product.id }}">Add to cart</button>
 				<a href=""><img src="{{ asset('bundles/ilcshop/images/knowMore.png') }}" alt="Logo en savoir plus" class="min_icone" /></a>
 				<a href=""><img src="{{ asset('bundles/ilcshop/images/download.png') }}" alt="Logo téléchargement" class="min_icone" /></a>
 			</div>
+			{% endfor %}
 		</div>
 
 	</div>
 
+{% endblock %}
+
+{% block javascripts %}
 {% endblock %}

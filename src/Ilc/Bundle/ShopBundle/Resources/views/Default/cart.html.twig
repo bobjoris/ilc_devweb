@@ -23,14 +23,20 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td><img src="http://placekitten.com/68/88" alt="item picture" /> Nam at lectus eget mi hendrerit tincidunt</td>
-			<td>Edit</td>
-			<td><span class="red bold">$90.00</span></td>
-			<td><input type="text" value="1" size="3" /></td>
-			<td><span class="red bold">$90.00</span></td>
-			<td><span class="red bold">x</span></td>
-		</tr>
+		{% for line in cart %}
+			<tr>
+				<td><img src="http://placekitten.com/68/88" alt="item picture" /> {{ line.Product.Name }}</td>
+				<td>Edit</td>
+				<td><span class="red bold">${{ line.Product.Price }}</span></td>
+				<td><input type="text" value="{{ line.quantity }}" size="3" /></td>
+				<td><span class="red bold">$</span></td>
+				<td><span class="red bold">x</span></td>
+			</tr>
+			{% else %}
+			<tr>
+				<td colspan="6">Il y a rien ici t'entends ?</td>
+			</tr>
+		{% endfor %}
 	</tbody>
 </table>
 
