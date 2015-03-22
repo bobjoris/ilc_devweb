@@ -24,12 +24,13 @@
 	</thead>
 	<tbody>
 		{% for line in cart %}
+			{% set total = line.Quantity * line.Product.Price %}
 			<tr>
 				<td><img src="http://placekitten.com/68/88" alt="item picture" /> {{ line.Product.Name }}</td>
 				<td>Edit</td>
 				<td><span class="red bold">${{ line.Product.Price }}</span></td>
-				<td><input type="text" value="{{ line.quantity }}" size="3" /></td>
-				<td><span class="red bold">$</span></td>
+				<td><input type="text" class="cart_quantity" value="{{ line.Quantity }}" size="3" /></td>
+				<td><span class="red bold">$  {{ total }}</span></td>
 				<td><span class="red bold">x</span></td>
 			</tr>
 			{% else %}
@@ -41,6 +42,6 @@
 </table>
 
 <div class="flex_space">
-	<a class="btn black" href="{{ path('checkout') }}">Continue shopping</a><button class="btn">Update shopping cart</button>
+	<a class="btn black" href="{{ path('checkout') }}">Continue shopping</a><button class="btn" href="{{ path('checkout') }}">Checkout</button>
 </div>
 {% endblock %}
