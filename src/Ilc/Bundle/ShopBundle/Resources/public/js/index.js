@@ -9,6 +9,38 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.delete_cart').click(function(event){
+		event.preventDefault();
+		var id = $(this).data('id');
+		var url = $(this).attr('href');
+		var line = $(this).parent().parent();
+
+		$.post(url, {'id': id}, function(res){
+			console.log(res);
+			line.remove();
+			refreshCartItem();
+		})
+	});
+
+	$('.cart_quantity').change(function(){
+		var line = $(this).parent().parent();
+		var url = $(this).data('url');
+		var id = $(this).data('id');
+
+		$.post(url, {'id': id, 'qty': $(this).val()}, function(res){
+			console.log(res);
+			var data = JSON.parse(res);
+			line.find('.total').html(data.total);
+			refreshCartItem();
+		});
+	});
+
+	$('.sort_select').change(function(){
+		var url = $(this).val();
+
+		window.location = url;
+	});
+
 	function refreshCartItem() {
 		var _countCartItem = $('.countCartItem');
 

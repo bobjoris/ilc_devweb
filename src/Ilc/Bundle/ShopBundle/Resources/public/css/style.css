@@ -190,11 +190,11 @@ h3 {
 	color: #868686;
 }
 
-.left_panel_content li.active {
+.left_panel_content li a.active {
 	color: #000;
 }
 
-.left_panel_content li.active:before {
+.left_panel_content li a.active:before {
 	content: " > ";
 }
 
@@ -403,4 +403,8 @@ td img {
 .flex_space {
 	display: flex;
 	justify-content: space-between;
+}
+
+.cart_quantity {
+	width: 30px;
 }

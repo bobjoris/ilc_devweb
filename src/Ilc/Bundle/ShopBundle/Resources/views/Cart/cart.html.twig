@@ -29,9 +29,9 @@
 				<td><img src="http://placekitten.com/68/88" alt="item picture" /> {{ line.Product.Name }}</td>
 				<td>Edit</td>
 				<td><span class="red bold">${{ line.Product.Price }}</span></td>
-				<td><input type="text" class="cart_quantity" value="{{ line.Quantity }}" size="3" /></td>
-				<td><span class="red bold">$  {{ total }}</span></td>
-				<td><span class="red bold">x</span></td>
+				<td><input type="number" class="cart_quantity" value="{{ line.Quantity }}" min="1" data-id="{{ line.Product.Id}}" data-url="{{ path('update_item_cart')}}" /></td>
+				<td><span class="red bold">$  <span class="total">{{ total }}</span></span></td>
+				<td><a href="{{ path('delete_item_cart') }}" class="delete_cart" data-id="{{ line.Product.Id }}"><span class="red bold">x</span></a></td>
 			</tr>
 			{% else %}
 			<tr>

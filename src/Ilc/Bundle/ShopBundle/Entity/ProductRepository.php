@@ -12,4 +12,25 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+
+	public function findProductsByCategory($category, $sort) {
+		$qb = $this->_em->createQueryBuilder();
+
+		$qb->select('p')
+			->from('IlcShopBundle:Product', 'p')
+			->join('p.category', 'c');
+
+		if($category != 0) {
+			$qb->where('c.id = :id')
+			->setParameter('id', $category);
+		}
+
+		$qb->orderBy('p.'.$sort);
+
+		return $qb->getQuery()->getResult();
+	}
+
+	public function getRepository(){
+		return $this->_em->getRepository('IlcShopBundle:Product');
+	}
 }
