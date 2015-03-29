@@ -14,16 +14,19 @@ class ProductController extends Controller
 {
     /**
      * @Route("/", name="index")
-     * @Route("/category/{category}", name="index_category")
      * @Route("/category/{category}/sort/{sort}", name="index_category_sort")
      * @Template()
      */
     public function indexAction($category = null, $sort = null)
     {
+        $request = $this->get('request');
+
         $category = ($category == null) ? 0 : $category;
         $sort = ($sort == null) ? 'name' : $sort;
 
-        $arrProducts = $this->getDoctrine()->getRepository('IlcShopBundle:Product')->findProductsByCategory($category, $sort);
+        $search = ($request->isMethod('POST')) ? $request->get('search') : '';
+
+        $arrProducts = $this->getDoctrine()->getRepository('IlcShopBundle:Product')->findProductsByCategory($category, $sort, $search);
         $arrCategories = $this->getDoctrine()->getRepository('IlcShopBundle:Category')->findAll();
 
         return array(
@@ -31,6 +34,7 @@ class ProductController extends Controller
             'categories' => $arrCategories,
             'selectedCategory' => $category,
             'selectedSort' => $sort,
+            'searchTerm' => $search,
         );
     }
 }

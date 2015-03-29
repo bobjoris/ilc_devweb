@@ -39,8 +39,10 @@
             </ul>
 
             <div class="search_box">
-                <input type="text" placeholder="Search entire store here" />
-                <button class="btn">Search</button>
+                <form action="{{ path('index') }}" method="post">
+                    <input type="text" name="search" placeholder="Search entire store here" />
+                    <button class="btn">Search</button>
+                </form>
             </div>
         </nav>
 

@@ -51,6 +51,9 @@
 		</div>
 
 		<div class="items">
+			{% if searchTerm != '' %}
+				<p>Résultat de la recherche pour {{ searchTerm }}</p>
+			{% endif %}
 			{% for product in products %}
 			<div class="item">
 				<a href="#" class="quick_shop">Quick shop</a>

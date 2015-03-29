@@ -13,15 +13,16 @@ use Doctrine\ORM\EntityRepository;
 class ProductRepository extends EntityRepository
 {
 
-	public function findProductsByCategory($category, $sort) {
+	public function findProductsByCategory($category, $sort, $search) {
 		$qb = $this->_em->createQueryBuilder();
 
 		$qb->select('p')
 			->from('IlcShopBundle:Product', 'p')
-			->join('p.category', 'c');
+			->join('p.category', 'c')
+			->where('p.name like \'%'.$search.'%\'');
 
 		if($category != 0) {
-			$qb->where('c.id = :id')
+			$qb->andWhere('c.id = :id')
 			->setParameter('id', $category);
 		}
 
