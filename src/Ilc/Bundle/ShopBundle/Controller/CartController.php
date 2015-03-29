@@ -31,15 +31,6 @@ class CartController extends Controller
             );
     }
 
-    /**
-     * @Route("checkout/", name="checkout")
-     * @Template()
-     */
-    public function checkoutAction()
-    {
-    	return array();
-    }
-
 
      /**
      * @Route("add_cart/", name="add_cart")

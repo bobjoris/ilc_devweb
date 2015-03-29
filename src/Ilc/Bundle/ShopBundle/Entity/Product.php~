@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Product
  *
- * @ORM\Table(name="products")
+ * @ORM\Table(name="ilc_products")
  * @ORM\Entity(repositoryClass="Ilc\Bundle\ShopBundle\Entity\ProductRepository")
  */
 class Product
@@ -29,9 +29,9 @@ class Product
     private $name;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="price", type="decimal")
+     * @ORM\Column(name="price", type="float")
      */
     private $price;
 
@@ -86,7 +86,7 @@ class Product
     /**
      * Set price
      *
-     * @param string $price
+     * @param float $price
      * @return Product
      */
     public function setPrice($price)
@@ -99,7 +99,7 @@ class Product
     /**
      * Get price
      *
-     * @return string 
+     * @return float 
      */
     public function getPrice()
     {

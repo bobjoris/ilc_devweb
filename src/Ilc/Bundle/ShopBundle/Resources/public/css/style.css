@@ -356,13 +356,13 @@ h3 {
 	margin-right: 160px;
 }
 
-.form_connection label {
+.form label {
 	display: block;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
 
-.form_connection input {
+.form input {
 	width: 370px;
 	height: 30px;
 	border: 1px solid #c9c9c9;

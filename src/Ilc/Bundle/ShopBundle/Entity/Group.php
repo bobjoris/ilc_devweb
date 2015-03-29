@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="groups")
+ * @ORM\Table(name="ilc_groups")
  * @ORM\Entity()
  */
 class Group implements RoleInterface

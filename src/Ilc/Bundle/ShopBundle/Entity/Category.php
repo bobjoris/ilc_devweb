@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Category
  *
- * @ORM\Table(name="categories")
+ * @ORM\Table(name="ilc_categories")
  * @ORM\Entity(repositoryClass="Ilc\Bundle\ShopBundle\Entity\CategoryRepository")
  */
 class Category
@@ -106,5 +106,28 @@ class Category
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Add products
+     *
+     * @param \Ilc\Bundle\ShopBundle\Entity\Product $products
+     * @return Category
+     */
+    public function addProduct(\Ilc\Bundle\ShopBundle\Entity\Product $products)
+    {
+        $this->products[] = $products;
+
+        return $this;
+    }
+
+    /**
+     * Remove products
+     *
+     * @param \Ilc\Bundle\ShopBundle\Entity\Product $products
+     */
+    public function removeProduct(\Ilc\Bundle\ShopBundle\Entity\Product $products)
+    {
+        $this->products->removeElement($products);
     }
 }

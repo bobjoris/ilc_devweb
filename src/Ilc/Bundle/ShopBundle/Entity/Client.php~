@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\EquatableInterface;
 /**
  * Client
  *
- * @ORM\Table(name="clients")
+ * @ORM\Table(name="ilc_clients")
  * @ORM\Entity
  */
 class Client implements UserInterface, \Serializable, EquatableInterface
@@ -46,35 +46,35 @@ class Client implements UserInterface, \Serializable, EquatableInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="firstName", type="string", length=255)
+     * @ORM\Column(name="firstName", type="string", length=255, nullable=true)
      */
     private $firstName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastName", type="string", length=255)
+     * @ORM\Column(name="lastName", type="string", length=255, nullable=true)
      */
     private $lastName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="street", type="string", length=255)
+     * @ORM\Column(name="street", type="string", length=255, nullable=true)
      */
     private $street;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="city", type="string", length=255)
+     * @ORM\Column(name="city", type="string", length=255, nullable=true)
      */
     private $city;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="postalCode", type="string", length=6)
+     * @ORM\Column(name="postalCode", type="string", length=6, nullable=true)
      */
     private $postalCode;
 
@@ -89,8 +89,10 @@ class Client implements UserInterface, \Serializable, EquatableInterface
      */
     private $groups;
 
-
-
+    /**
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="client", cascade={"remove", "persist"})
+     */
+    protected $addresses;
 
    
     /**
@@ -119,6 +121,17 @@ class Client implements UserInterface, \Serializable, EquatableInterface
     {
         return $this->email;
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function setUsername($username)
+    {
+        $this->email = $username;
+
+        return $this;
+    }
+
 
     /**
      * Set email

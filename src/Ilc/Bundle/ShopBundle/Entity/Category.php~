@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Category
  *
- * @ORM\Table(name="categories")
+ * @ORM\Table(name="ilc_categories")
  * @ORM\Entity(repositoryClass="Ilc\Bundle\ShopBundle\Entity\CategoryRepository")
  */
 class Category
@@ -32,7 +32,7 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity="Product", mappedBy="category", cascade={"persist"})
      */
-    private $articles;
+    private $products;
 
 
     /**
@@ -72,39 +72,39 @@ class Category
      */
     public function __construct()
     {
-        $this->articles = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add articles
+     * Add products
      *
-     * @param \Ilc\Bundle\ShopBundle\Entity\Product $articles
+     * @param \Ilc\Bundle\ShopBundle\Entity\Product $products
      * @return Category
      */
-    public function addArticle(\Ilc\Bundle\ShopBundle\Entity\Product $articles)
+    public function addProducts(\Ilc\Bundle\ShopBundle\Entity\Product $products)
     {
-        $this->articles[] = $articles;
+        $this->products[] = $products;
 
         return $this;
     }
 
     /**
-     * Remove articles
+     * Remove products
      *
-     * @param \Ilc\Bundle\ShopBundle\Entity\Product $articles
+     * @param \Ilc\Bundle\ShopBundle\Entity\Product $products
      */
-    public function removeArticle(\Ilc\Bundle\ShopBundle\Entity\Product $articles)
+    public function removeProducts(\Ilc\Bundle\ShopBundle\Entity\Product $products)
     {
-        $this->articles->removeElement($articles);
+        $this->products->removeElement($products);
     }
 
     /**
-     * Get articles
+     * Get products
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getArticles()
+    public function getProducts()
     {
-        return $this->articles;
+        return $this->products;
     }
 }

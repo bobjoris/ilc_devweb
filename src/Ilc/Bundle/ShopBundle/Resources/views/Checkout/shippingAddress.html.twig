@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block breadcrumb %}
+	<ul>
+       <li><a href="#">Home</a></li>
+       <li>Checkout</li>
+   </ul>
+{% endblock %}
+
+{% block body %}
+
+    <div class="left_panel">
+      <div class="left_panel_title">
+        <h3>Checkout Progress</h3>
+    </div>
+    <div class="left_panel_content">
+        <ul>
+          <li>Billing Address</li>
+          <li>Shipping Address</li>
+          <li>Shipping Method</li>
+          <li>Payment Method</li>
+      </ul>
+  </div>
+</div>
+
+<div class="content">
+    <h3><span class="border_number">1</span> Checkout method</h3>
+    
+
+<h3><span class="border_number">2</span> Billing information</h3>
+<h3 class="active"><span class="border_number">3</span> Shipping information</h3>
+<div class="checkout_content">
+    
+        {{ form_start(form, {'attr': {'class': 'form'}}) }}
+        
+        {{ form_rest(form) }}
+        
+        {{ form_end(form) }}
+    
+</div>
+<h3><span class="border_number">4</span> Shipping method</h3>
+<h3><span class="border_number">5</span> Payment information</h3>
+<h3><span class="border_number">6</span> Order review</h3>
+</div>
+
+
+{% endblock %}

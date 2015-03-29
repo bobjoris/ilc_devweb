@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\EquatableInterface;
 /**
  * Client
  *
- * @ORM\Table(name="clients")
+ * @ORM\Table(name="ilc_clients")
  * @ORM\Entity
  */
 class Client implements UserInterface, \Serializable, EquatableInterface
@@ -89,8 +89,10 @@ class Client implements UserInterface, \Serializable, EquatableInterface
      */
     private $groups;
 
-
-
+    /**
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="client", cascade={"remove", "persist"})
+     */
+    protected $addresses;
 
    
     /**
@@ -418,5 +420,38 @@ class Client implements UserInterface, \Serializable, EquatableInterface
     public function getRoles()
     {
         return $this->groups->toArray();
+    }
+
+    /**
+     * Add addresses
+     *
+     * @param \Ilc\Bundle\ShopBundle\Entity\Address $addresses
+     * @return Client
+     */
+    public function addAddress(\Ilc\Bundle\ShopBundle\Entity\Address $addresses)
+    {
+        $this->addresses[] = $addresses;
+
+        return $this;
+    }
+
+    /**
+     * Remove addresses
+     *
+     * @param \Ilc\Bundle\ShopBundle\Entity\Address $addresses
+     */
+    public function removeAddress(\Ilc\Bundle\ShopBundle\Entity\Address $addresses)
+    {
+        $this->addresses->removeElement($addresses);
+    }
+
+    /**
+     * Get addresses
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAddresses()
+    {
+        return $this->addresses;
     }
 }

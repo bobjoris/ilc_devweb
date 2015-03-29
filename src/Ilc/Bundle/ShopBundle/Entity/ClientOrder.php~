@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ClientOrder
  *
- * @ORM\Table(name="client_orders")
+ * @ORM\Table(name="ilc_client_orders")
  * @ORM\Entity
  */
 class ClientOrder
@@ -37,7 +37,7 @@ class ClientOrder
 
     /**
      * @ORM\ManyToOne(targetEntity="Client", inversedBy="orders")
-     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id", nullable=true)
      */
     protected $client;
 
@@ -45,6 +45,18 @@ class ClientOrder
      * @ORM\OneToMany(targetEntity="ClientOrderLine", mappedBy="order", cascade={"persist"})
      */
     protected $orderLines;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="billing_address_id", referencedColumnName="id")
+     */
+    protected $billingAddress;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="shipping_address_id", referencedColumnName="id")
+     */
+    protected $shippingAddress;
 
 
     /**

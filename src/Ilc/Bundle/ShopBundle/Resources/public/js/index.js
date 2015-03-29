@@ -40,6 +40,16 @@ $(document).ready(function(){
 
 		window.location = url;
 	});
+        
+        
+        $('.use_prev').click(function(){
+            if($(this).is(':Checked')) {
+                $(this).parent().parent().attr('novalidate', 'novalidate');
+            }
+            else {
+                $(this).parent().parent().removeAttr('novalidate');
+            }
+        });
 
 	function refreshCartItem() {
 		var _countCartItem = $('.countCartItem');

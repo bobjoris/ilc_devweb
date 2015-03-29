@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ClientOrderLine
  *
- * @ORM\Table(name="client_order_lines")
+ * @ORM\Table(name="ilc_client_order_lines")
  * @ORM\Entity
  */
 class ClientOrderLine

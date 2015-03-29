@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ClientOrder
  *
- * @ORM\Table(name="client_orders")
+ * @ORM\Table(name="ilc_client_orders")
  * @ORM\Entity
  */
 class ClientOrder
@@ -37,7 +37,7 @@ class ClientOrder
 
     /**
      * @ORM\ManyToOne(targetEntity="Client", inversedBy="orders")
-     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id", nullable=true)
      */
     protected $client;
 
@@ -45,6 +45,18 @@ class ClientOrder
      * @ORM\OneToMany(targetEntity="ClientOrderLine", mappedBy="order", cascade={"persist"})
      */
     protected $orderLines;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="billing_address_id", referencedColumnName="id")
+     */
+    protected $billingAddress;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Address")
+     * @ORM\JoinColumn(name="shipping_address_id", referencedColumnName="id")
+     */
+    protected $shippingAddress;
 
 
     /**
@@ -164,5 +176,51 @@ class ClientOrder
     public function getOrderLines()
     {
         return $this->orderLines;
+    }
+
+    /**
+     * Set billingAddress
+     *
+     * @param \Ilc\Bundle\ShopBundle\Entity\Address $billingAddress
+     * @return ClientOrder
+     */
+    public function setBillingAddress(\Ilc\Bundle\ShopBundle\Entity\Address $billingAddress = null)
+    {
+        $this->billingAddress = $billingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get billingAddress
+     *
+     * @return \Ilc\Bundle\ShopBundle\Entity\Address 
+     */
+    public function getBillingAddress()
+    {
+        return $this->billingAddress;
+    }
+
+    /**
+     * Set shippingAddress
+     *
+     * @param \Ilc\Bundle\ShopBundle\Entity\Address $shippingAddress
+     * @return ClientOrder
+     */
+    public function setShippingAddress(\Ilc\Bundle\ShopBundle\Entity\Address $shippingAddress = null)
+    {
+        $this->shippingAddress = $shippingAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get shippingAddress
+     *
+     * @return \Ilc\Bundle\ShopBundle\Entity\Address 
+     */
+    public function getShippingAddress()
+    {
+        return $this->shippingAddress;
     }
 }
