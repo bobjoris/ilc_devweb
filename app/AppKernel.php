@@ -2,6 +2,8 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class AppKernel extends Kernel
 {
@@ -29,6 +31,19 @@ class AppKernel extends Kernel
         }
 
         return $bundles;
+    }
+
+        public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        $response = parent::handle($request, $type, $catch);
+
+        if ($type == HttpKernelInterface::MASTER_REQUEST) {
+            if ($this->getContainer()->get('session')->isStarted()) {
+                $this->getContainer()->get('session')->save();
+            }
+        }
+
+        return $response;
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

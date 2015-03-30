@@ -28,12 +28,23 @@
 
 <h3><span class="border_number">2</span> Billing information</h3>
 <h3><span class="border_number">3</span> Shipping information</h3>
-<h3 class="active"><span class="border_number">4</span> Shipping method</h3>
-<div class="checkout_content">
-    Fin de la démonstration
-</div>
+<h3><span class="border_number">4</span> Shipping method</h3>
 <h3><span class="border_number">5</span> Payment information</h3>
-<h3><span class="border_number">6</span> Order review</h3>
+<h3 class="active"><span class="border_number">6</span> Order review</h3>
+<div class="checkout_content">
+    <div>
+      <strong>Billing Address</strong>
+      <p>{{ billing.firstname }} {{ billing.lastname }}<br />
+        {{ billing.street }} <br />{{ billing.postalCode }} {{ billing.city }}
+      </p>
+    </div>
+    <div>
+      <strong>Shipping Address</strong>
+      <p>{{ shipping.firstname }} {{ shipping.lastname }}<br />
+        {{ shipping.street }} <br />{{ shipping.postalCode }} {{ shipping.city }}
+      </p>
+    </div>
+</div>
 </div>
 
 

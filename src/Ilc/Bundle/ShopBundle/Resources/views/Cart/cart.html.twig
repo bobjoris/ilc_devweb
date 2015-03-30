@@ -26,7 +26,7 @@
 		{% for line in cart %}
 			{% set total = line.Quantity * line.Product.Price %}
 			<tr>
-				<td><img src="http://placekitten.com/68/88" alt="item picture" /> {{ line.Product.Name }}</td>
+				<td><img src="{{ line.Product.Image }}" alt="item picture" /> {{ line.Product.Name }}</td>
 				<td>Edit</td>
 				<td><span class="red bold">${{ line.Product.Price }}</span></td>
 				<td><input type="number" class="cart_quantity" value="{{ line.Quantity }}" min="1" data-id="{{ line.Product.Id}}" data-url="{{ path('update_item_cart')}}" /></td>
@@ -42,6 +42,6 @@
 </table>
 
 <div class="flex_space">
-	<a class="btn black" href="{{ path('checkout') }}">Continue shopping</a><button class="btn" href="{{ path('checkout') }}">Checkout</button>
+	<a class="btn black" href="{{ path('index') }}">Continue shopping</a><a class="btn" href="{{ path('checkout') }}">Checkout</a>
 </div>
 {% endblock %}

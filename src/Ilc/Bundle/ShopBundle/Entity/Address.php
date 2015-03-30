@@ -63,6 +63,8 @@ class Address
     protected $client;
 
 
+    protected $usePrev;
+
 
     /**
      * Get id
@@ -210,5 +212,15 @@ class Address
     public function getClient()
     {
         return $this->client;
+    }
+
+    public function getUsePrev() {
+        return $this->usePrev;
+    }
+
+    public function setUsePrev($usePrev) {
+        $this->usePrev = $usePrev;
+
+        return $this;
     }
 }

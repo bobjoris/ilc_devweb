@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\EquatableInterface;
  * Client
  *
  * @ORM\Table(name="ilc_clients")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Ilc\Bundle\ShopBundle\Entity\ClientRepository")
  */
 class Client implements UserInterface, \Serializable, EquatableInterface
 {
@@ -60,23 +60,10 @@ class Client implements UserInterface, \Serializable, EquatableInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="street", type="string", length=255, nullable=true)
+     * @ORM\Column(name="phone", type="string", length=255, nullable=true)
      */
-    private $street;
+    private $phone;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="city", type="string", length=255, nullable=true)
-     */
-    private $city;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="postalCode", type="string", length=6, nullable=true)
-     */
-    private $postalCode;
 
 
     /**
@@ -249,72 +236,26 @@ class Client implements UserInterface, \Serializable, EquatableInterface
     }
 
     /**
-     * Set street
+     * Set phone
      *
-     * @param string $street
+     * @param string $phone
      * @return Client
      */
-    public function setStreet($street)
+    public function setPhone($phone)
     {
-        $this->street = $street;
+        $this->phone = $phone;
 
         return $this;
     }
 
     /**
-     * Get street
+     * Get phone
      *
      * @return string 
      */
-    public function getStreet()
+    public function getPhone()
     {
-        return $this->street;
-    }
-
-    /**
-     * Set city
-     *
-     * @param string $city
-     * @return Client
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
-    /**
-     * Get city
-     *
-     * @return string 
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
-
-    /**
-     * Set postalCode
-     *
-     * @param string $postalCode
-     * @return Client
-     */
-    public function setPostalCode($postalCode)
-    {
-        $this->postalCode = $postalCode;
-
-        return $this;
-    }
-
-    /**
-     * Get postalCode
-     *
-     * @return string 
-     */
-    public function getPostalCode()
-    {
-        return $this->postalCode;
+        return $this->phone;
     }
 
     /**

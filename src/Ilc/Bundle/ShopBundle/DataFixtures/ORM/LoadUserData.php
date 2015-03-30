@@ -43,6 +43,8 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $user->setUsername('test@test.fr');
         $user->setSalt(md5(uniqid()));
         $user->setPassword($encoder->encodePassword('test', $user->getSalt()));
+        $user->setFirstName('John');
+        $user->setLastName('DOE');
         
         $group = $manager->getRepository('IlcShopBundle:Group')->findOneBy(array('role' => 'ROLE_USER'));
         $user->addGroup($group);

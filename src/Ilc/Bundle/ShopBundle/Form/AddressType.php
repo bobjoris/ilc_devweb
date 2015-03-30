@@ -16,26 +16,26 @@ class AddressType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         parent::buildForm($builder, $options);
         if($this->isShipping){
-            $builder->add('use_prev', 'checkbox', array(
-                'label' => 'Réutiliser les informations précédents',
+            $builder->add('usePrev', 'checkbox', array(
+                'label' => 'Use previous information',
                 'required'=> false,
                 'attr' => ['class' =>'use_prev'],
             ));
         }
                     $builder->add('firstname', 'text', array(
-                        'label' => 'Prénom'
+                        'label' => 'Firstname'
                    ))
                 ->add('lastname', 'text', array(
-                    'label' => 'Nom'
+                    'label' => 'Lastname'
                 ))
                 ->add('street', 'text', array(
-                    'label' => 'N° et rue'
+                    'label' => 'Street'
                 ))
                 ->add('postalCode', 'text', array(
-                    'label' => 'Code postal'
+                    'label' => 'Postal code'
                 ))
                 ->add('city', 'text', array(
-                    'label' => 'Ville'
+                    'label' => 'City'
                 ));          
     }
     

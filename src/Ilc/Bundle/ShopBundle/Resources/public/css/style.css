@@ -405,6 +405,7 @@ td:last-child {
 td img {
 	vertical-align: middle;
 	border-radius: 5px;
+	height: 88px;
 }
 
 .notification {
