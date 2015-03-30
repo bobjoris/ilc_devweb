@@ -19,7 +19,7 @@ class ClientType extends AbstractType {
         $builder->add('email', 'text', array(
                         'label' => 'Email'
                    ))
-                ->add('password', 'text', array(
+                ->add('password', 'password', array(
                     'label' => 'Password'
                 ))
                 ->add('firstname', 'text', array(
@@ -29,7 +29,8 @@ class ClientType extends AbstractType {
                     'label' => 'Lastname'
                 ))
                 ->add('phone', 'text', array(
-                    'label' => 'Phone'
+                    'label' => 'Phone',
+                    'required' => false,
                 ));          
     }
     

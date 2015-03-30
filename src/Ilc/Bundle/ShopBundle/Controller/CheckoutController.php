@@ -37,12 +37,14 @@ class CheckoutController extends Controller
             }
             else if($check == 1){
                 $session->set('guest', 'false');
-                return $this->redirect($this->generateUrl('checkout_logon'));
+                return $this->redirect($this->generateUrl('signup'));
             }
 
         }
     	return array();
     }
+
+
     
     /**
      * @Route("/billing_address", name="checkout_billing_address")
