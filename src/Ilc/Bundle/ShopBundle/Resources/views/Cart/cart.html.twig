@@ -9,7 +9,9 @@
 
 {% block body %}
 
-<div class="notification"><i class="fa fa-check"></i> The article was successfully added to your shopping cart.</div>
+{% for flashMessage in app.session.flashbag.get('notice') %}
+	<div class="notification"><i class="fa fa-check"></i> {{ flashMessage }}</div>
+{% endfor %}
 
 <table>
 	<thead>

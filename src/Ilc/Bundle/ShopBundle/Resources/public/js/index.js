@@ -6,6 +6,7 @@ $(document).ready(function(){
 		$.post(urlAddCart, {'id': id}, function(res){
 			console.log(res);
 			refreshCartItem();
+			$('#notif').slideDown('fast').delay(1500).slideUp('fast');
 		});
 	});
 

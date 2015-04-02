@@ -423,3 +423,15 @@ td img {
 .cart_quantity {
 	width: 30px;
 }
+
+#notif {
+	position:fixed;
+	width: 1180px;
+	top: 20px;
+	padding: 20px;
+	font-size:12px;
+	text-align: center;
+	background: #dff2bf;
+	color: #4f8a10;
+	display: none;
+}
