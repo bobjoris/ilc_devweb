@@ -18,8 +18,9 @@ class AddressType extends AbstractType {
         if($this->isShipping){
             $builder->add('usePrev', 'checkbox', array(
                 'label' => 'Use previous information',
+                'label_attr' => ['class' => 'checkbox'],
                 'required'=> false,
-                'attr' => ['class' =>'use_prev'],
+                'attr' => ['class' =>'use_prev checkbox'],
             ));
         }
                     $builder->add('firstname', 'text', array(

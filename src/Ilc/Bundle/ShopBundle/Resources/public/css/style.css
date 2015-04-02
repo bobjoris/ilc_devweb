@@ -424,6 +424,15 @@ td img {
 	width: 30px;
 }
 
+.checkbox {
+	display: inline-block !important;
+}
+
+input.checkbox {
+	height: 13px;
+	width: 13px;
+}
+
 #notif {
 	position:fixed;
 	width: 1180px;
