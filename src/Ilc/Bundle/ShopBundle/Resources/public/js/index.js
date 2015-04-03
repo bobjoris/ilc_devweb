@@ -29,7 +29,7 @@ $(document).ready(function(){
 		var id = $(this).data('id');
 		var val = $(this).val();
 
-		if(val < 0){
+		if(val <= 0){
 			$(this).val(1);
 			val = 1;
 		}
