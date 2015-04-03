@@ -27,6 +27,12 @@ $(document).ready(function(){
 		var line = $(this).parent().parent();
 		var url = $(this).data('url');
 		var id = $(this).data('id');
+		var val = $(this).val();
+
+		if(val < 0){
+			$(this).val(1);
+			val = 1;
+		}
 
 		$.post(url, {'id': id, 'qty': $(this).val()}, function(res){
 			console.log(res);
