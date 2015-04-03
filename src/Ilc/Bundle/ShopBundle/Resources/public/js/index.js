@@ -43,14 +43,20 @@ $(document).ready(function(){
 	});
         
         
-        $('.use_prev').click(function(){
-            if($(this).is(':Checked')) {
-                $(this).parent().parent().attr('novalidate', 'novalidate');
-            }
-            else {
-                $(this).parent().parent().removeAttr('novalidate');
-            }
-        });
+    $('.use_prev').click(function(){
+        if($(this).is(':Checked')) {
+            $(this).parent().parent().attr('novalidate', 'novalidate');
+        }
+        else {
+            $(this).parent().parent().removeAttr('novalidate');
+        }
+    });
+
+    $('.hide_option').click(function(event){
+    	event.preventDefault();
+
+    	$(this).parent().parent().find('.filter_bottom').slideToggle();
+    })
 
 	function refreshCartItem() {
 		var _countCartItem = $('.countCartItem');
